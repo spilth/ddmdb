@@ -4,7 +4,7 @@ Ddmdb::Application.routes.draw do
 
   root 'home#index'
 
-  resources :types, only: [:index, :new, :create]
+  resources :types, only: [:index, :new, :create, :show]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
