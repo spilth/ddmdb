@@ -14,7 +14,7 @@ feature 'types' do
   end
 
   def i_navigate_to_the_types_page
-    click_on 'Types'
+    click_on 'Types', match: :first
   end
 
   def i_create_a_new_type
