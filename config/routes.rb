@@ -4,6 +4,7 @@ Ddmdb::Application.routes.draw do
 
   root 'home#index'
 
+  resources :releases, only: [:index,:new, :create, :show]
   resources :miniatures, only: [:index, :new, :create, :show]
   resources :types, only: [:index, :new, :create, :show]
   resources :subtypes, only: [:index, :new, :create, :show]

@@ -2,6 +2,7 @@ require 'spec_helper'
 
 feature 'miniatures' do
   background do
+    Release.create(name: 'Harbinger', abbreviation: 'Ha', count: 80)
     Type.create(name: 'Humanoid')
     Subtype.create(name: 'Human')
   end
@@ -25,6 +26,7 @@ feature 'miniatures' do
   def i_create_a_new_miniature
     click_on 'New Miniature'
     fill_in 'Name', with: 'Cleric of Order'
+    select 'Harbinger', from: 'Release'
     select 'Humanoid', from: 'Type'
     select 'Human', from: 'Subtype'
     click_on 'Create Miniature'

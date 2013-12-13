@@ -19,6 +19,6 @@ class MiniaturesController < ApplicationController
   private
 
   def miniature_params
-    params.require(:miniature).permit(:name, :type_id, :subtype_id)
+    params.require(:miniature).permit(:name, :type_id, :subtype_id, :release_id)
   end
 end
