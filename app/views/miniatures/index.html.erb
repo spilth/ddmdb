@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Release</th>
       <th>Type</th>
       <th>Subtype</th>
     </tr>
@@ -14,6 +15,7 @@
   <%- @miniatures.each do |miniature| %>
     <tr>
       <td><%= link_to miniature.name, miniature %></td>
+      <td><%= link_to miniature.release.name, miniature.release %></td>
       <td><%= link_to miniature.type.name, miniature.type %></td>
       <td><%= link_to miniature.subtype.name, miniature.subtype %></td>
     </tr>
