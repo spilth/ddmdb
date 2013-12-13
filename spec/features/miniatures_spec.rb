@@ -37,6 +37,8 @@ feature 'miniatures' do
   def i_can_see_the_details_of_the_new_miniature
     click_on 'Cleric of Order'
     expect(page).to have_content 'Cleric of Order'
+    expect(page).to have_content 'Humanoid'
+    expect(page).to have_content 'Human'
   end
 end
 
