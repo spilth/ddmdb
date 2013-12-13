@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131213015405) do
+ActiveRecord::Schema.define(version: 20131213023842) do
+
+  create_table "miniatures", force: true do |t|
+    t.string   "name"
+    t.integer  "type_id"
+    t.integer  "subtype_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "miniatures", ["subtype_id"], name: "index_miniatures_on_subtype_id"
+  add_index "miniatures", ["type_id"], name: "index_miniatures_on_type_id"
 
   create_table "subtypes", force: true do |t|
     t.string   "name"

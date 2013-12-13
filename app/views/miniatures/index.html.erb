@@ -1,0 +1,10 @@
+<h1>Miniatures</h1>
+
+<p><%= link_to 'New Miniature', new_miniature_path, class: 'btn btn-default' %></p>
+
+<ul>
+<%- @miniatures.each do |miniature| %>
+  <li><%= link_to miniature.name, miniature %></li>
+<% end %>
+</ul>
+
