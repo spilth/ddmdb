@@ -1,6 +1,6 @@
 class SubtypesController < ApplicationController
   def index
-    @subtypes = Subtype.all
+    @subtypes = Subtype.order(:name)
   end
 
   def new
