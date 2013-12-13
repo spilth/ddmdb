@@ -1,0 +1,9 @@
+<h1>Subtypes</h1>
+
+<%= link_to 'New Subtype', new_subtype_path %>
+
+<ul>
+<%- @subtypes.each do |subtype| %>
+  <li><%= link_to subtype.name, subtype %></li>
+<% end %>
+</ul>

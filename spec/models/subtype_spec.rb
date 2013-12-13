@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Type do
+describe Subtype do
 end
