@@ -58,5 +58,6 @@ end
 group :test do
   gem 'simple_bdd'
   gem 'capybara'
+  gem 'shoulda-matchers'
 end
 
