@@ -9,6 +9,13 @@ feature 'types' do
     And 'I can see the details of the new type'
   end
 
+  scenario 'viewing releases' do
+    Given 'I am on the homepage'
+    And 'There is a type with miniatures'
+    When 'I navigate to a type detail page'
+    Then 'I should see the miniatures in that type'
+  end
+
   def i_am_on_the_homepage
     visit root_path
   end
@@ -30,6 +37,21 @@ feature 'types' do
   def i_can_see_the_details_of_the_new_type
     click_on 'Aberration'
     expect(page).to have_content 'Aberration'
+  end
+
+  def there_is_a_type_with_miniatures
+    release = Release.create(name: 'Harbinger', abbreviation: 'Ha', count: 80)
+    type = Type.create(name: 'Humanoid')
+    Miniature.create(name: 'Cleric of Order', type_id: type.id, release: release, number: 1)
+  end
+
+  def i_navigate_to_a_type_detail_page
+    click_on 'Types', match: :first
+    click_on 'Humanoid'
+  end
+
+  def i_should_see_the_miniatures_in_that_type
+    expect(page).to have_content 'Cleric of Order'
   end
 end
 
