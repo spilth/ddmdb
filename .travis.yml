@@ -8,3 +8,5 @@ deploy:
   app: ddmdb
   on:
     repo: spilth/ddmdb
+notifications:
+  flowdock: 3b253618862643c659ddeda84449c613
