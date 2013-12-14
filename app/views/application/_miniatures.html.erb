@@ -1,0 +1,24 @@
+<table class="table table-striped table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Release</th>
+      <th>Number</th>
+      <th>Type</th>
+      <th>Subtype</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%- miniatures.each do |miniature| %>
+    <tr>
+      <td><%= link_to image_tag(miniature_thumbnail(miniature), size: '64x64'), miniature %></td>
+      <td><%= link_to miniature.name, miniature %></td>
+      <td><%= link_to miniature.release.name, miniature.release %></td>
+      <td><%= miniature.number %></td>
+      <td><%= link_to(miniature.type.name, miniature.type) if miniature.type %></td>
+      <td><%= link_to(miniature.subtype.name, miniature.subtype) if miniature.subtype %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

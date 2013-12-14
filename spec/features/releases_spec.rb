@@ -9,6 +9,13 @@ feature 'releases' do
     And 'I can see the details of the new release'
   end
 
+  scenario 'viewing releases' do
+    Given 'I am on the homepage'
+    And 'There is a release with miniatures'
+    When 'I navigate to a release detail page'
+    Then 'I should see the miniatures in that release'
+  end
+
   def i_am_on_the_homepage
     visit root_path
   end
@@ -34,6 +41,21 @@ feature 'releases' do
     expect(page).to have_content 'Harbinger'
     expect(page).to have_content 'Ha'
     expect(page).to have_content '80'
+  end
+
+  def there_is_a_release_with_miniatures
+    release = Release.create(name: 'Harbinger', abbreviation: 'Ha', count: 80)
+    Miniature.create(name: 'Cleric of Order', release: release, number: 1)
+  end
+
+  def i_navigate_to_a_release_detail_page
+    click_on 'Releases'
+    click_on 'Harbinger'
+  end
+
+  def i_should_see_the_miniatures_in_that_release
+    expect(page).to have_content 'Harbinger'
+    expect(page).to have_content 'Cleric of Order'
   end
 end
 
