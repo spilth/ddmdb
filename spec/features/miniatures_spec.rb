@@ -27,6 +27,7 @@ feature 'miniatures' do
     click_on 'New Miniature'
     fill_in 'Name', with: 'Cleric of Order'
     select 'Harbinger', from: 'Release'
+    fill_in 'Number', with: '1'
     select 'Humanoid', from: 'Type'
     select 'Human', from: 'Subtype'
     click_on 'Create Miniature'
@@ -38,9 +39,11 @@ feature 'miniatures' do
 
   def i_can_see_the_details_of_the_new_miniature
     click_on 'Cleric of Order'
-    expect(page).to have_content 'Cleric of Order'
-    expect(page).to have_content 'Humanoid'
-    expect(page).to have_content 'Human'
+    expect(page).to have_content 'Miniature: Cleric of Order'
+    expect(page).to have_content 'Release Harbinger'
+    expect(page).to have_content 'Number 1'
+    expect(page).to have_content 'Type Humanoid'
+    expect(page).to have_content 'Subtype Human'
   end
 end
 

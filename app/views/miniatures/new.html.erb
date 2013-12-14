@@ -2,21 +2,25 @@
 
 <%= form_for @miniature, html: {role: "form"} do |f| %>
   <div class="form-group">
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
   <div class="form-group">
-  <%= f.label :release_id %>
-  <%= f.collection_select :release_id, Release.all, :id, :name, {}, {class: 'form-control'} %>
+    <%= f.label :release_id %>
+    <%= f.collection_select :release_id, Release.all, :id, :name, {}, {class: 'form-control'} %>
   </div>
   <div class="form-group">
-  <%= f.label :type_id %>
-  <%= f.collection_select :type_id, Type.all, :id, :name, {}, {class: 'form-control'} %>
+    <%= f.label :number %>
+    <%= f.text_field :number, class: 'form-control' %>
   </div>
   <div class="form-group">
-  <%= f.label :subtype_id %>
-  <%= f.collection_select :subtype_id, Subtype.all, :id, :name, {}, {class: 'form-control'} %>
-</div>
+    <%= f.label :type_id %>
+    <%= f.collection_select :type_id, Type.all, :id, :name, {}, {class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :subtype_id %>
+    <%= f.collection_select :subtype_id, Subtype.all, :id, :name, {}, {class: 'form-control'} %>
+  </div>
 
   <%= f.submit 'Create Miniature', class: 'btn btn-default' %>
 <% end %>

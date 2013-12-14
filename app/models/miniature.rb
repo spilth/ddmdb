@@ -7,4 +7,5 @@ class Miniature < ActiveRecord::Base
   validates :type, presence: true
   validates :subtype, presence: true
   validates :release, presence: true
+  validates :number, presence: true, numericality: true
 end
