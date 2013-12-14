@@ -1,16 +1,22 @@
 <h1>Miniature: <%= @miniature.name %></h1>
 
-<dl class="dl-horizontal">
-  <dt>Release</dt>
-  <dd><%= @miniature.release.name %></dd>
+<div class="pull-right">
+  <%= image_tag miniature_image(@miniature) %>
+</div>
 
-  <dt>Number</dt>
-  <dd><%= @miniature.number %></dd>
+<div class="pull-left">
+  <dl class="dl-horizontal">
+    <dt>Release</dt>
+    <dd><%= @miniature.release.name %></dd>
 
-  <dt>Type</dt>
-  <dd><%= @miniature.type.name %></dd>
+    <dt>Number</dt>
+    <dd><%= @miniature.number %></dd>
 
-  <dt>Subtype</dt>
-  <dd><%= @miniature.subtype.name %></dd>
-</dl>
+    <dt>Type</dt>
+    <dd><%= @miniature.type.name %></dd>
+
+    <dt>Subtype</dt>
+    <dd><%= @miniature.subtype.name %></dd>
+  </dl>
+</div>
 
