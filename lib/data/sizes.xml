@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sizes type="array">
+  <size>
+    <abbreviation>T</abbreviation>
+    <created-at type="datetime">2008-11-02T09:11:47Z</created-at>
+    <id type="integer">1</id>
+    <name>Tiny</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </size>
+  <size>
+    <abbreviation>S</abbreviation>
+    <created-at type="datetime">2008-11-02T09:11:47Z</created-at>
+    <id type="integer">2</id>
+    <name>Small</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </size>
+  <size>
+    <abbreviation>M</abbreviation>
+    <created-at type="datetime">2008-11-02T09:11:47Z</created-at>
+    <id type="integer">3</id>
+    <name>Medium</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </size>
+  <size>
+    <abbreviation>L</abbreviation>
+    <created-at type="datetime">2008-11-02T09:11:47Z</created-at>
+    <id type="integer">4</id>
+    <name>Large</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </size>
+  <size>
+    <abbreviation>H</abbreviation>
+    <created-at type="datetime">2008-11-02T09:11:47Z</created-at>
+    <id type="integer">5</id>
+    <name>Huge</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </size>
+  <size>
+    <abbreviation>G</abbreviation>
+    <created-at type="datetime">2008-11-02T09:11:47Z</created-at>
+    <id type="integer">6</id>
+    <name>Gargantuan</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </size>
+  <size>
+    <abbreviation>C</abbreviation>
+    <created-at type="datetime">2008-11-02T09:11:47Z</created-at>
+    <id type="integer">7</id>
+    <name>Colossal</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </size>
+</sizes>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<releases type="array">
+  <release>
+    <abbreviation>BCS</abbreviation>
+    <created-at type="datetime">2010-11-20T07:16:23Z</created-at>
+    <id type="integer">31</id>
+    <name>Beholder Collector's Set</name>
+    <path>beholders</path>
+    <released-on type="date">2010-11-16</released-on>
+    <updated-at type="datetime">2010-11-20T07:16:23Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>DDM4</abbreviation>
+    <created-at type="datetime">2009-05-11T02:39:07Z</created-at>
+    <id type="integer">28</id>
+    <name>Lords of Madness</name>
+    <path>lords-of-madness</path>
+    <released-on type="date">2010-09-21</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>I:O</abbreviation>
+    <created-at type="datetime">2010-10-07T01:04:58Z</created-at>
+    <id type="integer">30</id>
+    <name>Icons: Orcus, Prince of Undeath</name>
+    <path>icons</path>
+    <released-on type="date">2010-06-15</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>DDM3</abbreviation>
+    <created-at type="datetime">2009-05-11T02:38:56Z</created-at>
+    <id type="integer">27</id>
+    <name>Savage Encounters</name>
+    <path>savage-encounters</path>
+    <released-on type="date">2009-11-17</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>DDM2</abbreviation>
+    <created-at type="datetime">2009-05-11T02:38:41Z</created-at>
+    <id type="integer">26</id>
+    <name>Legendary Evils</name>
+    <path>legendary-evils</path>
+    <released-on type="date">2009-08-18</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>PHH2</abbreviation>
+    <created-at type="datetime">2009-05-11T02:38:34Z</created-at>
+    <id type="integer">25</id>
+    <name>Player's Handbook Heroes - Series 2</name>
+    <path>heroes</path>
+    <released-on type="date">2009-08-06</released-on>
+    <updated-at type="datetime">2010-10-07T02:12:33Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>DDM1</abbreviation>
+    <created-at type="datetime">2009-05-11T02:38:16Z</created-at>
+    <id type="integer">24</id>
+    <name>Dangerous Delves</name>
+    <path>dangerous-delves</path>
+    <released-on type="date">2009-05-19</released-on>
+    <updated-at type="datetime">2010-10-07T02:11:38Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>PHH</abbreviation>
+    <created-at type="datetime">2009-05-11T02:37:49Z</created-at>
+    <id type="integer">23</id>
+    <name>Player's Handbook Heroes - Series 1</name>
+    <path>heroes</path>
+    <released-on type="date">2009-04-04</released-on>
+    <updated-at type="datetime">2010-10-07T02:12:57Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>DW</abbreviation>
+    <created-at type="datetime">2008-11-03T02:41:50Z</created-at>
+    <id type="integer">20</id>
+    <name>Demonweb</name>
+    <path>demonweb</path>
+    <released-on type="date">2008-11-07</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>AtG</abbreviation>
+    <created-at type="datetime">2008-11-03T02:41:08Z</created-at>
+    <id type="integer">19</id>
+    <name>Against the Giants</name>
+    <path>against-the-giants</path>
+    <released-on type="date">2008-07-12</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>S08</abbreviation>
+    <created-at type="datetime">2008-12-03T16:27:12Z</created-at>
+    <id type="integer">22</id>
+    <name>2008 Starter Set</name>
+    <path>starter-2008</path>
+    <released-on type="date">2008-04-15</released-on>
+    <updated-at type="datetime">2010-10-07T02:18:09Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>DxD</abbreviation>
+    <created-at type="datetime">2008-11-03T02:40:58Z</created-at>
+    <id type="integer">18</id>
+    <name>Dungeons of Dread</name>
+    <path>dungeons-of-dread</path>
+    <released-on type="date">2008-03-28</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>DoD</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">17</id>
+    <name>Desert of Desolation</name>
+    <path>desert-of-desolation</path>
+    <released-on type="date">2007-10-26</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>I:LoD</abbreviation>
+    <created-at type="datetime">2008-11-26T23:43:23Z</created-at>
+    <id type="integer">21</id>
+    <name>Icons: Legend of Drizzt Scenario Pack</name>
+    <path>icons</path>
+    <released-on type="date">2007-09-01</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>NB</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">16</id>
+    <name>Night Below</name>
+    <path>night-below</path>
+    <released-on type="date">2007-07-06</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>Uh</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">15</id>
+    <name>Unhallowed</name>
+    <path>unhallowed</path>
+    <released-on type="date">2007-03-05</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>BW</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">13</id>
+    <name>Blood War</name>
+    <path>blood-war</path>
+    <released-on type="date">2006-11-06</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>I</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">11</id>
+    <name>D&amp;D Icons</name>
+    <path>icons</path>
+    <released-on type="date">2006-08-01</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>DQ</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">10</id>
+    <name>War of the Dragon Queen</name>
+    <path>war-of-the-dragon-queen</path>
+    <released-on type="date">2006-07-07</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>WD</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">9</id>
+    <name>War Drums</name>
+    <path>war-drums</path>
+    <released-on type="date">2006-03-03</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>Ud</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">8</id>
+    <name>Underdark</name>
+    <path>underdark</path>
+    <released-on type="date">2005-11-03</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>Af</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">7</id>
+    <name>Angelfire</name>
+    <path>angelfire</path>
+    <released-on type="date">2005-07-21</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>Dk</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">6</id>
+    <name>Deathknell</name>
+    <path>deathknell</path>
+    <released-on type="date">2005-03-24</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>Ab</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">5</id>
+    <name>Aberrations</name>
+    <path>aberrations</path>
+    <released-on type="date">2004-10-14</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>GoL</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">4</id>
+    <name>Giants of Legend</name>
+    <path>giants-of-legend</path>
+    <released-on type="date">2004-06-18</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>Ar</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">3</id>
+    <name>Archfiends</name>
+    <path>archfiends</path>
+    <released-on type="date">2004-03-25</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>De</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">2</id>
+    <name>Dragoneye</name>
+    <path>dragoneye</path>
+    <released-on type="date">2003-12-19</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+  <release>
+    <abbreviation>Ha</abbreviation>
+    <created-at type="datetime">2008-11-02T09:54:03Z</created-at>
+    <id type="integer">1</id>
+    <name>Harbinger</name>
+    <path>harbinger</path>
+    <released-on type="date">2003-09-26</released-on>
+    <updated-at type="datetime">2010-10-07T02:06:41Z</updated-at>
+  </release>
+</releases>

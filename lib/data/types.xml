@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types type="array">
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>An aberration has a bizarre anatomy, strange abilities, an alien mindset, or any combination of the three.</description>
+    <id type="integer">1</id>
+    <name>Aberration</name>
+    <updated-at type="datetime">2008-12-28T03:36:23Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>An animal is a living, nonhuman creature, usually a vertebrate with no magical abilities and no innate capacity for language or culture.</description>
+    <id type="integer">2</id>
+    <name>Animal</name>
+    <updated-at type="datetime">2008-12-28T03:36:40Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>A construct is an animated object or artificially constructed creature.</description>
+    <id type="integer">3</id>
+    <name>Construct</name>
+    <updated-at type="datetime">2008-12-28T03:36:58Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>A dragon is a reptilelike creature, usually winged, with magical or unusual abilities.</description>
+    <id type="integer">4</id>
+    <name>Dragon</name>
+    <updated-at type="datetime">2008-12-28T03:37:14Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>An elemental is a being composed of one of the four classical elements: air, earth, fire, or water.</description>
+    <id type="integer">5</id>
+    <name>Elemental</name>
+    <updated-at type="datetime">2008-12-28T03:37:38Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>A fey is a creature with supernatural abilities and connections to nature or to some other force or place. Fey are usually human-shaped.</description>
+    <id type="integer">16</id>
+    <name>Fey</name>
+    <updated-at type="datetime">2008-12-28T03:37:54Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>A giant is a humanoid-shaped creature of great strength, usually of at least Large size.</description>
+    <id type="integer">6</id>
+    <name>Giant</name>
+    <updated-at type="datetime">2008-12-28T03:38:11Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>A humanoid usually has two arms, two legs, and one head, or a humanlike torso, arms, and a head. Humanoids have few or no supernatural or extraordinary abilities, but most can speak and usually have well-developed societies.</description>
+    <id type="integer">7</id>
+    <name>Humanoid</name>
+    <updated-at type="datetime">2008-12-28T03:38:31Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>Magical beasts are similar to animals but can have Intelligence scores higher than 2. Magical beasts usually have supernatural or extraordinary abilities, but sometimes are merely bizarre in appearance or habits.</description>
+    <id type="integer">9</id>
+    <name>Magical Beast</name>
+    <updated-at type="datetime">2008-12-28T03:38:55Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>Monstrous humanoids are similar to humanoids, but with monstrous or animalistic features. They often have magical abilities as well.</description>
+    <id type="integer">10</id>
+    <name>Monstrous Humanoid</name>
+    <updated-at type="datetime">2008-12-28T03:39:14Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>An ooze is an amorphous or mutable creature, usually mindless.</description>
+    <id type="integer">8</id>
+    <name>Ooze</name>
+    <updated-at type="datetime">2008-12-28T03:39:30Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>An outsider is at least partially composed of the essence (but not necessarily the material) of some plane other than the Material Plane.</description>
+    <id type="integer">11</id>
+    <name>Outsider</name>
+    <updated-at type="datetime">2008-12-28T03:40:06Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>This type comprises vegetable creatures. Note that regular plants, such as one finds growing in gardens and fields, lack Wisdom and Charisma scores (see Nonabilities) and are not creatures, but objects, even though they are alive.</description>
+    <id type="integer">12</id>
+    <name>Plant</name>
+    <updated-at type="datetime">2008-12-28T03:40:28Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>Undead are once-living creatures animated by spiritual or supernatural forces.</description>
+    <id type="integer">13</id>
+    <name>Undead</name>
+    <updated-at type="datetime">2008-12-28T03:40:46Z</updated-at>
+  </type>
+  <type>
+    <created-at type="datetime">2008-11-02T09:15:29Z</created-at>
+    <description>This type includes insects, arachnids, other arthropods, worms, and similar invertebrates.</description>
+    <id type="integer">14</id>
+    <name>Vermin</name>
+    <updated-at type="datetime">2008-12-28T03:41:04Z</updated-at>
+  </type>
+</types>

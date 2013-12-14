@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subtypes type="array">
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">1</id>
+    <name>Aquatic</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">3</id>
+    <name>Catfolk</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">27</id>
+    <name>Creeper</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-12-31T01:00:50Z</created-at>
+    <id type="integer">38</id>
+    <name>Dragonborn</name>
+    <updated-at type="datetime">2008-12-31T01:00:50Z</updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">29</id>
+    <name>Drow</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">6</id>
+    <name>Dwarf</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">7</id>
+    <name>Elf</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">8</id>
+    <name>Extraplanar</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">30</id>
+    <name>Fey</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">32</id>
+    <name>Giant</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">10</id>
+    <name>Gnoll</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">11</id>
+    <name>Gnome</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">12</id>
+    <name>Goblinoid</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">13</id>
+    <name>Goliath</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">14</id>
+    <name>Halfling</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">15</id>
+    <name>Human</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">33</id>
+    <name>Humanoid</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">16</id>
+    <name>Kenku</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">18</id>
+    <name>Living Construct</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">19</id>
+    <name>Maenad</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">25</id>
+    <name>Mongrelfolk</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">21</id>
+    <name>Orc</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">22</id>
+    <name>Reptilian</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">23</id>
+    <name>Shapechanger</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-27T07:18:46Z</created-at>
+    <id type="integer">37</id>
+    <name>Spirit</name>
+    <updated-at type="datetime">2008-11-27T07:18:46Z</updated-at>
+  </subtype>
+  <subtype>
+    <created-at type="datetime">2008-11-02T09:17:32Z</created-at>
+    <id type="integer">24</id>
+    <name>Xeph</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </subtype>
+</subtypes>
