@@ -10,3 +10,6 @@ deploy:
     repo: spilth/ddmdb
 notifications:
   flowdock: 3b253618862643c659ddeda84449c613
+  hipchat:
+    rooms:
+      secure: EFddroPSdj6dqn8MB5CN+Ak9tbTbslxiC8mYtv7ytpSHqBpT/eLfPtHW5bN/fdEjVE+y9SjbBGNsiNmgicAri5OMQBpWSPagoU4AhWOAh2cq08zAslFXwKxK6odjilU5wvz31bYxQWOSXGKlGO8cNb5hpZX6LawcbNcQQbYtvRk=
