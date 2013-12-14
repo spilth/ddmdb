@@ -13,10 +13,10 @@
     <dd><%= @miniature.number %></dd>
 
     <dt>Type</dt>
-    <dd><%= @miniature.type.name %></dd>
+    <dd><%= @miniature.type.name if @miniature.type %></dd>
 
     <dt>Subtype</dt>
-    <dd><%= @miniature.subtype.name %></dd>
+    <dd><%= @miniature.subtype.name if @miniature.subtype %></dd>
   </dl>
 </div>
 
