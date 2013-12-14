@@ -40,9 +40,8 @@ feature 'Subtypes' do
   end
 
   def there_is_a_subtype_with_miniatures
-    release = Release.create(name: 'Harbinger', abbreviation: 'Ha', count: 80)
-    subtype = Subtype.create(name: 'Human')
-    Miniature.create(name: 'Cleric of Order', subtype: subtype, release: release, number: 1)
+    subtype = create(:subtype, name: 'Human')
+    create(:miniature, name: 'Cleric of Order', subtype: subtype)
   end
 
   def i_navigate_to_a_subtype_detail_page

@@ -40,9 +40,8 @@ feature 'types' do
   end
 
   def there_is_a_type_with_miniatures
-    release = Release.create(name: 'Harbinger', abbreviation: 'Ha', count: 80)
-    type = Type.create(name: 'Humanoid')
-    Miniature.create(name: 'Cleric of Order', type_id: type.id, release: release, number: 1)
+    type = create(:type, name: 'Humanoid')
+    create(:miniature, name: 'Cleric of Order', type: type)
   end
 
   def i_navigate_to_a_type_detail_page

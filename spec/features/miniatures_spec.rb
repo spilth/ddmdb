@@ -2,9 +2,9 @@ require 'spec_helper'
 
 feature 'miniatures' do
   background do
-    Release.create(name: 'Harbinger', abbreviation: 'Ha', count: 80)
-    Type.create(name: 'Humanoid')
-    Subtype.create(name: 'Human')
+    create(:release, name: 'Harbinger', abbreviation: 'Ha', count: 80)
+    create(:type, name: 'Humanoid')
+    create(:subtype, name: 'Human')
   end
 
   scenario 'managing miniatures' do

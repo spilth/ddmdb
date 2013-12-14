@@ -44,8 +44,8 @@ feature 'releases' do
   end
 
   def there_is_a_release_with_miniatures
-    release = Release.create(name: 'Harbinger', abbreviation: 'Ha', count: 80)
-    Miniature.create(name: 'Cleric of Order', release: release, number: 1)
+    release = create(:release, name: 'Harbinger', abbreviation: 'Ha')
+    create(:miniature, name: 'Cleric of Order', release: release, number: 1)
   end
 
   def i_navigate_to_a_release_detail_page
