@@ -9,7 +9,7 @@ feature 'types' do
     And 'I can see the details of the new type'
   end
 
-  scenario 'viewing releases' do
+  scenario 'viewing types' do
     Given 'I am on the homepage'
     And 'There is a type with miniatures'
     When 'I navigate to a type detail page'
