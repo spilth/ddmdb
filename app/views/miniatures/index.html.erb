@@ -20,8 +20,8 @@
       <td><%= link_to miniature.name, miniature %></td>
       <td><%= link_to miniature.release.name, miniature.release %></td>
       <td><%= miniature.number %></td>
-      <td><%= link_to miniature.type.name, miniature.type %></td>
-      <td><%= link_to miniature.subtype.name, miniature.subtype %></td>
+      <td><%= link_to(miniature.type.name, miniature.type) if miniature.type %></td>
+      <td><%= link_to(miniature.subtype.name, miniature.subtype) if miniature.subtype %></td>
     </tr>
   <% end %>
   </tbody>

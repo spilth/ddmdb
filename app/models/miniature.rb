@@ -4,8 +4,6 @@ class Miniature < ActiveRecord::Base
   belongs_to :release
 
   validates :name, presence: true
-  validates :type, presence: true
-  validates :subtype, presence: true
   validates :release, presence: true
   validates :number, presence: true, numericality: true
 end
