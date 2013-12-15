@@ -1,13 +1,6 @@
 language: ruby
 rvm:
 - 2.0.0
-deploy:
-  provider: heroku
-  api_key:
-    secure: OCXupLkDn7lpOxYV9Q14Z2CgZwfNbAn6cJ0duF21nVRgKTklI4b6efRynQr8FjlA+ZoG8D2xkEgA79BHE0tY6MR/cq9jplSSuz9/uzY4QSuUyQJyhttb9UwgluSaQ5w+x08aWXHLfOVkhM5Xsj29gdlyHqux9KY4sc2tlPDv0yk=
-  app: ddmdb
-  on:
-    repo: spilth/ddmdb
 notifications:
   flowdock: 3b253618862643c659ddeda84449c613
   hipchat:
