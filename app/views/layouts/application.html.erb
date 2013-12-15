@@ -35,12 +35,20 @@
             <li><%= link_to 'Subtypes', subtypes_path %></li>
             <li><%= link_to 'Sizes', sizes_path %></li>
             <li><%= link_to 'Rarities', rarities_path %></li>
+            <%- if user_signed_in? %>
+              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+            <%- else %>
+              <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+              <li><%= link_to 'Sign In', new_user_session_path %></li>
+            <%- end %>
           </ul>
         </div>
       </div>
     </div>
 
     <div class="container">
+      <%= content_tag :div, notice, class: 'alert alert-info' if notice %>
+      <%= content_tag :div, alert, class: 'alert alert-warning' if alert %>
       <%= yield %>
     </div>
 
