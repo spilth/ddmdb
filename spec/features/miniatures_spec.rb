@@ -5,6 +5,7 @@ feature 'miniatures' do
     create(:release, name: 'Harbinger', abbreviation: 'Ha', count: 80)
     create(:type, name: 'Humanoid')
     create(:subtype, name: 'Human')
+    create(:size, name: 'Medium')
   end
 
   scenario 'managing miniatures' do
@@ -30,6 +31,7 @@ feature 'miniatures' do
     fill_in 'Number', with: '1'
     select 'Humanoid', from: 'Type'
     select 'Human', from: 'Subtype'
+    select 'Medium', from: 'Size'
     click_on 'Create Miniature'
   end
 

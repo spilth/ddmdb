@@ -8,6 +8,7 @@ Ddmdb::Application.routes.draw do
   resources :miniatures, only: [:index, :new, :create, :show]
   resources :types, only: [:index, :new, :create, :show]
   resources :subtypes, only: [:index, :new, :create, :show]
+  resources :sizes, only: [:index, :new, :create, :show]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
