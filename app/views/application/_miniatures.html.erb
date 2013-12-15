@@ -5,6 +5,7 @@
       <th>Name</th>
       <th>Release</th>
       <th>Number</th>
+      <th>Rarity</th>
       <th>Type / Subtype</th>
       <th>Size</th>
     </tr>
@@ -16,8 +17,9 @@
       <td><%= link_to miniature.name, miniature %></td>
       <td><%= link_to miniature.release.name, miniature.release %></td>
       <td><%= miniature.number %></td>
+      <td><%= link_to(miniature.rarity.abbreviation) if miniature.rarity %></td>
       <td><%= link_to(miniature.type.name, miniature.type) if miniature.type %> <%= link_to(miniature.subtype.name, miniature.subtype) if miniature.subtype %></td>
-      <td><%= link_to miniature.size.abbreviation, miniature.size if miniature.size %></td>
+      <td><%= link_to(miniature.size.abbreviation, miniature.size) if miniature.size %></td>
     </tr>
   <% end %>
   </tbody>
