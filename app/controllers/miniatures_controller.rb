@@ -1,6 +1,6 @@
 class MiniaturesController < ApplicationController
   def index
-    @miniatures = Miniature.order(:release_id, :number)
+    @miniatures = Miniature.order(:release_id, :number).includes(:release, :rarity, :type, :subtype, :size)
   end
 
   def new
