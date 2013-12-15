@@ -6,12 +6,14 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Abbreviation</th>
     </tr>
   </thead>
   <tbody>
   <%- @sizes.each do |size| %>
     <tr>
       <td><%= link_to size.name, size %></td>
+      <td><%= size.abbreviation %></td>
     </tr>
   <% end %>
   </tbody>
