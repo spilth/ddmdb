@@ -1,0 +1,11 @@
+<h1>New Rarity</h1>
+
+<%= form_for @rarity do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :abbreviation %>
+  <%= f.text_field :abbreviation %>
+
+  <%= f.submit %>
+<% end %>

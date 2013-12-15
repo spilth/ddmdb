@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131215010126) do
+ActiveRecord::Schema.define(version: 20131215035340) do
 
   create_table "miniatures", force: true do |t|
     t.string   "name"
@@ -22,12 +22,21 @@ ActiveRecord::Schema.define(version: 20131215010126) do
     t.integer  "release_id"
     t.integer  "number"
     t.integer  "size_id"
+    t.integer  "rarity_id"
   end
 
+  add_index "miniatures", ["rarity_id"], name: "index_miniatures_on_rarity_id"
   add_index "miniatures", ["release_id"], name: "index_miniatures_on_release_id"
   add_index "miniatures", ["size_id"], name: "index_miniatures_on_size_id"
   add_index "miniatures", ["subtype_id"], name: "index_miniatures_on_subtype_id"
   add_index "miniatures", ["type_id"], name: "index_miniatures_on_type_id"
+
+  create_table "rarities", force: true do |t|
+    t.string   "name"
+    t.string   "abbreviation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "releases", force: true do |t|
     t.string   "name"

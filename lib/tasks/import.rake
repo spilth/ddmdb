@@ -3,7 +3,7 @@ require 'nokogiri'
 namespace :import do
 
   desc 'Import all data from XML'
-  task :all => [:releases, :types, :subtypes, :sizes, :miniatures]
+  task :all => [:releases, :types, :subtypes, :sizes, :rarities, :miniatures]
 
   desc 'Import Releases from XML'
   task :releases => :environment do
@@ -64,6 +64,21 @@ namespace :import do
     end
   end
 
+  desc 'Import Rarities from XML'
+  task :rarities => :environment do
+    Rarity.destroy_all
+
+    xml = Nokogiri::XML(open('lib/data/rarities.xml'))
+    xml.xpath("//rarity").each do |rarity|
+      r = Rarity.new(
+        name: rarity.xpath("name").text,
+        abbreviation: rarity.xpath("abbreviation").text,
+      )
+      r.id = rarity.xpath("id").text
+      r.save!
+    end
+  end
+
   desc 'Import Miniatures from XML'
   task :miniatures => :environment do
     Miniature.destroy_all
@@ -77,6 +92,7 @@ namespace :import do
         type_id:  miniature.xpath("type-id").text,
         subtype_id:  miniature.xpath("subtype-id").text,
         size_id:  miniature.xpath("size-id").text,
+        rarity_id:  miniature.xpath("rarity-id").text,
       )
       m.id = miniature.xpath("id").text
       m.save!

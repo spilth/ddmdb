@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rarities type="array">
+  <rarity>
+    <abbreviation>C</abbreviation>
+    <created-at type="datetime">2008-11-02T09:13:50Z</created-at>
+    <id type="integer">1</id>
+    <name>Common</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </rarity>
+  <rarity>
+    <abbreviation>U</abbreviation>
+    <created-at type="datetime">2008-11-02T09:13:50Z</created-at>
+    <id type="integer">2</id>
+    <name>Uncommon</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </rarity>
+  <rarity>
+    <abbreviation>R</abbreviation>
+    <created-at type="datetime">2008-11-02T09:13:50Z</created-at>
+    <id type="integer">3</id>
+    <name>Rare</name>
+    <updated-at type="datetime" nil="true"></updated-at>
+  </rarity>
+  <rarity>
+    <abbreviation>S</abbreviation>
+    <created-at type="datetime">2008-12-03T16:32:31Z</created-at>
+    <id type="integer">4</id>
+    <name>Starter Only</name>
+    <updated-at type="datetime">2008-12-03T16:32:31Z</updated-at>
+  </rarity>
+  <rarity>
+    <abbreviation>V</abbreviation>
+    <created-at type="datetime">2009-06-06T03:26:03Z</created-at>
+    <id type="integer">5</id>
+    <name>Visible</name>
+    <updated-at type="datetime">2009-06-06T04:10:32Z</updated-at>
+  </rarity>
+  <rarity>
+    <abbreviation>VR</abbreviation>
+    <created-at type="datetime">2010-09-20T23:46:00Z</created-at>
+    <id type="integer">6</id>
+    <name>Very Rare</name>
+    <updated-at type="datetime">2010-09-20T23:46:00Z</updated-at>
+  </rarity>
+</rarities>
