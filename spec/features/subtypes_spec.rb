@@ -2,18 +2,28 @@ require 'spec_helper'
 
 feature 'Subtypes' do
   scenario 'Managing Subtypes' do
-    Given 'I am on the homepage'
+    Given 'I am logged in as an admin'
     When 'I navigate to the Subtypes page'
     And 'I create a new subtype'
     Then 'I should see that new subtype on the index page'
     And 'I can see the details of the new subtype'
   end
 
-  scenario 'viewing subtypes' do
+  scenario 'Viewing Subtypes' do
     Given 'I am on the homepage'
     And 'There is a subtype with miniatures'
+
+    When 'I navigate to the Subtypes page'
+    Then 'I should not see a create button'
+
     When 'I navigate to a subtype detail page'
     Then 'I should see the miniatures in that subtype'
+  end
+
+  def i_am_logged_in_as_an_admin
+    admin_user = create(:admin_user)
+    login admin_user
+    visit root_path
   end
 
   def i_am_on_the_homepage
@@ -51,6 +61,10 @@ feature 'Subtypes' do
 
   def i_should_see_the_miniatures_in_that_subtype
     expect(page).to have_content 'Cleric of Order'
+  end
+
+  def i_should_not_see_a_create_button
+    expect(page).to have_no_link 'New Subtype'
   end
 end
 

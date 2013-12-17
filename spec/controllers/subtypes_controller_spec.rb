@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe SubtypesController do
+  it_behaves_like 'a protected resource'
+
   describe "#index" do
     it 'assigns all the subtypes' do
       get :index
@@ -8,24 +10,30 @@ describe SubtypesController do
     end
   end
 
-  describe "#new" do
-    it 'assigns a new subtype' do
-      get :new
-      expect(assigns(:subtype)).not_to be_nil
+  context 'as an admin' do
+    before do
+      sign_in :user, create(:admin_user)
     end
-  end
 
-  describe '#create' do
-    context 'with valid data' do
-      it 'redirects to the subtypes index' do
-        post :create, subtype: { name: 'Dwarf' }
-        expect(response).to redirect_to subtypes_path
+    describe "#new" do
+      it 'assigns a new subtype' do
+        get :new
+        expect(assigns(:subtype)).not_to be_nil
       end
+    end
 
-      it 'saves a new subtype' do
-        Subtype.stub(:create) { Subtype.new }
-        post :create, subtype: { name: 'Dwarf' }
-        expect(Subtype).to have_received(:create)
+    describe '#create' do
+      context 'with valid data' do
+        it 'redirects to the subtypes index' do
+          post :create, subtype: { name: 'Dwarf' }
+          expect(response).to redirect_to subtypes_path
+        end
+
+        it 'saves a new subtype' do
+          Subtype.stub(:create) { Subtype.new }
+          post :create, subtype: { name: 'Dwarf' }
+          expect(Subtype).to have_received(:create)
+        end
       end
     end
   end
