@@ -1,19 +1,29 @@
 require 'spec_helper'
 
-feature 'types' do
-  scenario 'managing types' do
-    Given 'I am on the homepage'
+feature 'Types' do
+  scenario 'Managing Types' do
+    Given 'I am logged in as an admin'
     When 'I navigate to the Types page'
     And 'I create a new type'
     Then 'I should see that new type on the index page'
     And 'I can see the details of the new type'
   end
 
-  scenario 'viewing types' do
+  scenario 'Viewing Types' do
     Given 'I am on the homepage'
     And 'There is a type with miniatures'
+
+    When 'I navigate to the Types page'
+    Then 'I should not see a create button'
+
     When 'I navigate to a type detail page'
     Then 'I should see the miniatures in that type'
+  end
+
+  def i_am_logged_in_as_an_admin
+    admin_user = create(:admin_user)
+    login admin_user
+    visit root_path
   end
 
   def i_am_on_the_homepage
@@ -51,6 +61,10 @@ feature 'types' do
 
   def i_should_see_the_miniatures_in_that_type
     expect(page).to have_content 'Cleric of Order'
+  end
+
+  def i_should_not_see_a_create_button
+    expect(page).to have_no_link 'New Type'
   end
 end
 

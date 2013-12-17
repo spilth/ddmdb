@@ -1,30 +1,12 @@
 require 'spec_helper'
 
 describe ReleasesController do
+  it_behaves_like 'a protected resource'
+
   describe "#index" do
     it 'assigns all the releases' do
       get :index
       expect(assigns(:releases)).not_to be_nil
-    end
-  end
-
-  context 'as a non-admin' do
-    before do
-      sign_in :user, create(:user)
-    end
-
-    describe "#new" do
-      it 'redirects to the homepage' do
-        get :new
-        expect(response).to redirect_to root_path
-      end
-    end
-
-    describe '#create' do
-      it 'redirects to the homepage' do
-        post :create, release: { name: 'Harbinger' }
-        expect(response).to redirect_to root_path
-      end
     end
   end
 

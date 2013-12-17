@@ -25,7 +25,4 @@ class ReleasesController < ApplicationController
     params.require(:release).permit(:name, :abbreviation, :count)
   end
 
-  def admin_only
-    redirect_to root_path unless current_user.try(:admin?)
-  end
 end

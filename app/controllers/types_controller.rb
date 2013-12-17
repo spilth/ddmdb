@@ -1,4 +1,7 @@
 class TypesController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create]
+  before_filter :admin_only, only: [:new, :create]
+
   def index
     @types = Type.order(:name)
   end

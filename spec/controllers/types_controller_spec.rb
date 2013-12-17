@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe TypesController do
+  it_behaves_like 'a protected resource'
+
   describe "#index" do
     it 'assigns all the types' do
       get :index
@@ -8,24 +10,30 @@ describe TypesController do
     end
   end
 
-  describe "#new" do
-    it 'assigns a new type' do
-      get :new
-      expect(assigns(:type)).not_to be_nil
+  context 'as an admin' do
+    before do
+      sign_in :user, create(:admin_user)
     end
-  end
 
-  describe '#create' do
-    context 'with valid data' do
-      it 'redirects to the types index' do
-        post :create, type: { name: 'Aberration' }
-        expect(response).to redirect_to types_path
+    describe "#new" do
+      it 'assigns a new type' do
+        get :new
+        expect(assigns(:type)).not_to be_nil
       end
+    end
 
-      it 'saves a new type' do
-        Type.stub(:create) { Type.new }
-        post :create, type: { name: 'Aberration' }
-        expect(Type).to have_received(:create)
+    describe '#create' do
+      context 'with valid data' do
+        it 'redirects to the types index' do
+          post :create, type: { name: 'Aberration' }
+          expect(response).to redirect_to types_path
+        end
+
+        it 'saves a new type' do
+          Type.stub(:create) { Type.new }
+          post :create, type: { name: 'Aberration' }
+          expect(Type).to have_received(:create)
+        end
       end
     end
   end
