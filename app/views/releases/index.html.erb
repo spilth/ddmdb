@@ -1,6 +1,8 @@
 <h1>Releases</h1>
 
-<p><%= link_to 'New Release', new_release_path, class: 'btn btn-default' %></p>
+<% if current_user.try(:admin?) %>
+  <p><%= link_to 'New Release', new_release_path, class: 'btn btn-default' %></p>
+<% end %>
 
 <table class="table table-striped table-hover table-condensed">
   <thead>

@@ -1,4 +1,7 @@
 class ReleasesController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create]
+  before_filter :admin_only, only: [:new, :create]
+
   def index
     @releases = Release.order(:id)
   end
@@ -20,5 +23,9 @@ class ReleasesController < ApplicationController
 
   def release_params
     params.require(:release).permit(:name, :abbreviation, :count)
+  end
+
+  def admin_only
+    redirect_to root_path unless current_user.try(:admin?)
   end
 end

@@ -1,19 +1,29 @@
 require 'spec_helper'
 
-feature 'releases' do
-  scenario 'managing releases' do
-    Given 'I am on the homepage'
+feature 'Releases' do
+  scenario 'Managing Releases' do
+    Given 'I am logged in as an admin'
     When 'I navigate to the Releases page'
     And 'I create a new release'
     Then 'I should see that new release on the index page'
     And 'I can see the details of the new release'
   end
 
-  scenario 'viewing releases' do
+  scenario 'Viewing Releases' do
     Given 'I am on the homepage'
     And 'There is a release with miniatures'
+
+    When 'I navigate to the Releases page'
+    Then 'I should not see a create button'
+
     When 'I navigate to a release detail page'
     Then 'I should see the miniatures in that release'
+  end
+
+  def i_am_logged_in_as_an_admin
+    admin_user = create(:admin_user)
+    login admin_user
+    visit root_path
   end
 
   def i_am_on_the_homepage
@@ -57,5 +67,10 @@ feature 'releases' do
     expect(page).to have_content 'Harbinger'
     expect(page).to have_content 'Cleric of Order'
   end
+
+  def i_should_not_see_a_create_button
+    expect(page).to have_no_link 'New Release'
+  end
+
 end
 
