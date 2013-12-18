@@ -1,19 +1,29 @@
 require 'spec_helper'
 
-feature 'sizes' do
-  scenario 'managing sizes' do
-    Given 'I am on the homepage'
+feature 'Sizes' do
+  scenario 'Managing Sizes' do
+    Given 'I am logged in as an admin'
     When 'I navigate to the Sizes page'
     And 'I create a new size'
     Then 'I should see that new size on the index page'
     And 'I can see the details of the new size'
   end
 
-  scenario 'viewing sizes' do
+  scenario 'Viewing Sizes' do
     Given 'I am on the homepage'
     And 'There is a size with miniatures'
+
+    When 'I navigate to the Sizes page'
+    Then 'I should not see a create button'
+
     When 'I navigate to a size detail page'
     Then 'I should see the miniatures in that size'
+  end
+
+  def i_am_logged_in_as_an_admin
+    admin_user = create(:admin_user)
+    login admin_user
+    visit root_path
   end
 
   def i_am_on_the_homepage
@@ -52,6 +62,10 @@ feature 'sizes' do
 
   def i_should_see_the_miniatures_in_that_size
     expect(page).to have_content 'Cleric of Order'
+  end
+
+  def i_should_not_see_a_create_button
+    expect(page).to have_no_content 'New Size'
   end
 end
 

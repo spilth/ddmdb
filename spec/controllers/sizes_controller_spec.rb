@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe SizesController do
+  it_behaves_like 'a protected resource'
+
   describe "#index" do
     it 'assigns all the sizes' do
       get :index
@@ -8,24 +10,29 @@ describe SizesController do
     end
   end
 
-  describe "#new" do
-    it 'assigns a new size' do
-      get :new
-      expect(assigns(:size)).not_to be_nil
+  context 'as an admin' do
+    before do
+      sign_in :user, create(:admin_user)
     end
-  end
-
-  describe '#create' do
-    context 'with valid data' do
-      it 'redirects to the sizes index' do
-        post :create, size: { name: 'Medium', abbreviation: 'M' }
-        expect(response).to redirect_to sizes_path
+    describe "#new" do
+      it 'assigns a new size' do
+        get :new
+        expect(assigns(:size)).not_to be_nil
       end
+    end
 
-      it 'saves a new size' do
-        Size.stub(:create) { Size.new }
-        post :create, size: { name: 'Medium', abbreviation: 'M' }
-        expect(Size).to have_received(:create)
+    describe '#create' do
+      context 'with valid data' do
+        it 'redirects to the sizes index' do
+          post :create, size: { name: 'Medium', abbreviation: 'M' }
+          expect(response).to redirect_to sizes_path
+        end
+
+        it 'saves a new size' do
+          Size.stub(:create) { Size.new }
+          post :create, size: { name: 'Medium', abbreviation: 'M' }
+          expect(Size).to have_received(:create)
+        end
       end
     end
   end

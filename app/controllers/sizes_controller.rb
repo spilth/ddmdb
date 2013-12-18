@@ -1,4 +1,7 @@
 class SizesController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create]
+  before_filter :admin_only, only: [:new, :create]
+
   def index
     @sizes = Size.order(:id)
   end
