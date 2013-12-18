@@ -1,6 +1,8 @@
 <h1>Miniatures</h1>
 
-<p><%= link_to 'New Miniature', new_miniature_path, class: 'btn btn-default' %></p>
+<% if current_user.try(:admin?) %>
+  <p><%= link_to 'New Miniature', new_miniature_path, class: 'btn btn-default' %></p>
+<% end %>
 
 <%= render "miniatures", miniatures: @miniatures %>
 

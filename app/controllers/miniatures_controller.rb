@@ -1,4 +1,7 @@
 class MiniaturesController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create]
+  before_filter :admin_only, only: [:new, :create]
+
   def index
     @miniatures = Miniature.order(:release_id, :number).includes(:release, :rarity, :type, :subtype, :size)
   end

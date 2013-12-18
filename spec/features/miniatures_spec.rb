@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'miniatures' do
+feature 'Miniatures' do
   background do
     create(:release, name: 'Harbinger', abbreviation: 'Ha', count: 80)
     create(:type, name: 'Humanoid')
@@ -8,12 +8,29 @@ feature 'miniatures' do
     create(:size, name: 'Medium')
   end
 
-  scenario 'managing miniatures' do
-    Given 'I am on the homepage'
+  scenario 'Managing Miniatures' do
+    Given 'I am logged in as an admin'
     When 'I navigate to the Miniatures page'
     And 'I create a new miniature'
     Then 'I should see that new miniature on the index page'
     And 'I can see the details of the new miniature'
+  end
+
+  scenario 'Viewing Miniatures' do
+    Given 'I am on the homepage'
+    And 'There is a miniature'
+
+    When 'I navigate to the Miniatures page'
+    Then 'I should not see a create button'
+
+    When 'I navigate to a miniature detail page'
+    Then 'I should see the miniatures in that rarity'
+  end
+
+  def i_am_logged_in_as_an_admin
+    admin_user = create(:admin_user)
+    login admin_user
+    visit root_path
   end
 
   def i_am_on_the_homepage
@@ -46,6 +63,22 @@ feature 'miniatures' do
     expect(page).to have_content 'Number 1'
     expect(page).to have_content 'Type Humanoid'
     expect(page).to have_content 'Subtype Human'
+  end
+
+  def there_is_a_miniature
+    create(:miniature, name: 'Cleric of Order')
+  end
+
+  def i_should_not_see_a_create_button
+    expect(page).to have_no_content 'New Miniature'
+  end
+
+  def i_navigate_to_a_miniature_detail_page
+    click_link 'Cleric of Order'
+  end
+
+  def i_should_see_the_miniatures_in_that_rarity
+    expect(page).to have_content 'Miniature: Cleric of Order'
   end
 end
 
