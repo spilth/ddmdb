@@ -1,26 +1,34 @@
-<table class="table table-striped table-hover table-condensed">
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Release</th>
-      <th>Number</th>
-      <th>Rarity</th>
-      <th>Type / Subtype</th>
-      <th>Size</th>
-    </tr>
-  </thead>
-  <tbody>
-  <%- miniatures.each do |miniature| %>
-    <tr>
-      <td><%= link_to image_tag(miniature_thumbnail(miniature), size: '64x64'), miniature %></td>
-      <td><%= link_to miniature.name, miniature %></td>
-      <td><%= link_to miniature.release.name, miniature.release %></td>
-      <td><%= miniature.number %></td>
-      <td><%= link_to(miniature.rarity.abbreviation) if miniature.rarity %></td>
-      <td><%= link_to(miniature.type.name, miniature.type) if miniature.type %> <%= link_to(miniature.subtype.name, miniature.subtype) if miniature.subtype %></td>
-      <td><%= link_to(miniature.size.abbreviation, miniature.size) if miniature.size %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<%= form_for :user_miniature, url: update_multiple_user_miniatures_path, method: :put do |f| %>
+  <%= f.submit 'Update Collection' %>
+  <table class="table table-striped table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Release</th>
+        <th>Number</th>
+        <th>Rarity</th>
+        <th>Type / Subtype</th>
+        <th>Size</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody>
+    <%- miniatures.each do |miniature| %>
+      <tr>
+        <td><%= link_to image_tag(miniature_thumbnail(miniature), size: '64x64'), miniature %></td>
+        <td><%= link_to miniature.name, miniature %></td>
+        <td><%= link_to miniature.release.name, miniature.release %></td>
+        <td><%= miniature.number %></td>
+        <td><%= link_to(miniature.rarity.abbreviation) if miniature.rarity %></td>
+        <td><%= link_to(miniature.type.name, miniature.type) if miniature.type %> <%= link_to(miniature.subtype.name, miniature.subtype) if miniature.subtype %></td>
+        <td><%= link_to(miniature.size.abbreviation, miniature.size) if miniature.size %></td>
+        <td>
+          <%= label_tag "count[#{miniature.id}]", "#{miniature.name} Count" %><br />
+          <%= number_field_tag "count[#{miniature.id}]", 0, min: 0 %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
