@@ -1,4 +1,7 @@
 class RaritiesController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create]
+  before_filter :admin_only, only: [:new, :create]
+
   def index
     @rarities = Rarity.order(:id)
   end
