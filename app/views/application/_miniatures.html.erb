@@ -15,11 +15,11 @@
     <tr>
       <td><%= link_to image_tag(miniature_thumbnail(miniature), size: '64x64'), miniature %></td>
       <td><%= link_to miniature.name, miniature %></td>
-      <td><%= link_to miniature.release.name, miniature.release %></td>
+      <td><%= link_to miniature.release_name, miniature.release %></td>
       <td><%= miniature.number %></td>
-      <td><%= link_to(miniature.rarity.abbreviation) if miniature.rarity %></td>
-      <td><%= link_to(miniature.type.name, miniature.type) if miniature.type %> <%= link_to(miniature.subtype.name, miniature.subtype) if miniature.subtype %></td>
-      <td><%= link_to(miniature.size.abbreviation, miniature.size) if miniature.size %></td>
+      <td><%= link_to_if(miniature.rarity, miniature.rarity_abbreviation, miniature.rarity) %></td>
+      <td><%= link_to_if(miniature.type, miniature.type_name, miniature.type) %> <%= link_to_if(miniature.subtype, miniature.subtype_name, miniature.subtype) %></td>
+      <td><%= link_to_if(miniature.size, miniature.size_abbreviation, miniature.size) %></td>
     </tr>
   <% end %>
   </tbody>
