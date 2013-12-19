@@ -83,3 +83,5 @@ group :development, :test do
   gem 'brakeman'
 end
 
+gem 'dotenv'
+
