@@ -77,3 +77,9 @@ group :test do
 end
 
 gem 'rack-mini-profiler'
+
+group :development, :test do
+  gem 'rails_best_practices'
+  gem 'brakeman'
+end
+
