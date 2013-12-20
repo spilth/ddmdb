@@ -8,5 +8,5 @@
   <dd><%= @release.count %></dd>
 </dl>
 
-<%= render "miniatures", miniatures: @release.miniatures %>
+<%= render "miniatures", miniatures: @release.miniatures.decorate %>
 

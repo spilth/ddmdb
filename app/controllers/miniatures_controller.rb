@@ -3,7 +3,7 @@ class MiniaturesController < ApplicationController
   before_filter :admin_only, only: [:new, :create]
 
   def index
-    @miniatures = Miniature.order(:release_id, :number).includes(:release, :rarity, :type, :subtype, :size)
+    @miniatures = Miniature.order(:release_id, :number).includes(:release, :rarity, :type, :subtype, :size).decorate
   end
 
   def new
@@ -16,7 +16,7 @@ class MiniaturesController < ApplicationController
   end
 
   def show
-    @miniature = Miniature.find(params[:id])
+    @miniature = Miniature.find(params[:id]).decorate
   end
 
   private
