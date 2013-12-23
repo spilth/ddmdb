@@ -1,0 +1,7 @@
+<% content_for :title do %>Releases: <%=h @release.name %> (<%=h @release.abbreviation %>)<% end %>
+
+<div style="float: right;"><%= release_image(@release) %><br/></div>
+
+<%= link_to 'Edit', edit_release_path(@release) if is_admin? %> 
+
+<%= list_miniatures(@list_mode) %>

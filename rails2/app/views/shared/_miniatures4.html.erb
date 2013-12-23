@@ -1,0 +1,61 @@
+<%= render(:partial => "shared/listing_description") %>
+
+<% if @miniatures.size > 0 -%>
+
+  <% form_tag '/collections/update' do %>
+
+  <table id="miniatures" cellspacing="0">
+  	<tr>
+  		<th>Image</th>
+  		<th><a href="?sort=name">Name</a></th>
+  		<th><a href="?sort=number">Number</a></th>
+      <th><span title="Rarity">R</span></th>
+      <th><span title="Size"><a href="?sort=size">S</a></span></th>
+  		<th><a href="?sort=level">Level</a></th>
+  		<th><a href="?sort=difficulty">Difficulty</a></th>
+  		<th><a href="?sort=role">Role</a></th>
+  		<th><a href="?sort=leader">Leader</a></th>
+  		<th><a href="?sort=origin">Origin</a></th>
+  		<th><a href="?sort=kind">Type</a></th>
+  		<th><a href="?sort=source2">Source</a></th>
+  		<th>Setting</th>
+      <% if logged_in? %>
+        <th>Count</th>
+        <th>Favorite</th>
+      <% end %>
+  		<% if is_admin? %>
+        <th>Edit</th>
+       <% end %>
+  	</tr>
+  <% for miniature in @miniatures %>
+  	<tr class="<%= cycle('odd','even') %>">
+  		<td class="thumbnail"><%= link_to thumbnail(miniature), miniature %></td>
+      <td><%= link_to miniature.name, miniature %></td>
+      <td><span class="abbreviation"><%= link_to h(miniature.release.abbreviation), miniature.release, :title => miniature.release.name %> <%= miniature.number %></span></td>
+      <td><span class="abbreviation"><%= link_to h(miniature.rarity.abbreviation), miniature.rarity, :title => miniature.rarity.name if miniature.rarity %></span></td>
+      <td><span class="abbreviation"><%= link_to h(miniature.size.abbreviation), miniature.size, :title => miniature.size.name if miniature.size %></span></td>
+  		<td><span class="abbreviation"><%= miniature.level %></span></td>
+      <td><%= link_to h(miniature.difficulty.name), miniature.difficulty if miniature.difficulty %></td>
+      <td><%= link_to miniature.role.name, miniature.role if miniature.role %></td>
+      <td><span class="abbreviation"><%= format_leader(miniature) %></span></td>
+      <td><%= link_to miniature.origin.name, miniature.origin if miniature.origin %></td>
+      <td><%= link_to miniature.kind.name, miniature.kind if miniature.kind %></td>
+      <td><span class="abbreviation"><%= link_to h(miniature.source2.abbreviation), miniature.source2, :title => miniature.source2.name if miniature.source2 %> <%= h miniature.source2_page_number %></span></td>
+      <td><span class="abbreviation"><%= link_to h(miniature.setting.abbreviation), miniature.setting if miniature.setting %></span></td>
+  		<% if logged_in? %>
+  			<td><%= text_field_tag "counts[#{miniature.id}]", current_user.miniature_count(miniature.id), :size => 2 %></td>
+  			<td><%= favorite_icon(current_user, miniature) %></td>
+  		<% end %>
+      <% if is_admin? %>
+  			<td><%= link_to image_tag(edit_icon), edit_miniature_path(miniature) if is_admin? %></td>
+  		<% end %>
+  	</tr>
+  <% end%>
+  </table>
+
+  <% if logged_in? %>
+  	<%= submit_tag "Update Collection" %>
+  <% end %>
+
+  <% end %>
+<% end -%>

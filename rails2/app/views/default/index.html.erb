@@ -1,0 +1,31 @@
+<% content_for :title do %>Welcome!<% end %>
+
+<div style="float:right;"><img src="http://ddm-images.s3.amazonaws.com/miniatures/0632.jpg"></div>
+
+<p>This is an unofficial D&amp;D Miniatures Database.  The goal of this site is store all RPG statistics (both 3rd and 4th edition) for all D&amp;D Miniature releases since the original Harbinger release.</p>
+
+<p>There is <a href="http://ddmdb.21.forumer.com/">a forum to discuss stats, tags and read news</a> about the site.</p>
+
+<h2>Database Stats &amp; Recent Updates</h2>
+
+<p><strong>16 February 2012: How the Time Flies</strong> We're still here! Brian's old ddmdb.com domain name has expired, so if you're reading this, you must have paid attention back in 2010 when I told you to start using dracosaur.us instead. :)</p>
+
+<p>The end of Wizards mini production meant a long dry spell for this site, as I decided not to bother with monster counters. However, that's changed recently with the release of the Pathfinder "Heroes &amp; Monsters" prepainted mini set from Paizo. I recently picked up two bricks and wound up with 34 of the 40 minis, plus 6 duplicates. Not too shabby. I'll be adding them to this site soon. I'm also thinking of rewriting the site code, so you may see some changes coming soon.</p>
+
+<p><strong>8 March 2011: No More Minis?</strong> I've been hearing frankly disturbing rumors that Wizards is giving up on plastic minis in favor of the cardboard counters included with the Essentials product line. If true, I wonder if there's any interest in ddmdb.com/dracosaur.us adding database listings for each counter?</p>
+
+<p><strong>20 November 2010: Beholder Collector's Set</strong> While I don't have Mini Gallery-quality images yet, I have posted the <%= link_to "Beholder Collector's Set", release_path(31) %> released last Tuesday. I'm quite pleased with it. It came to about $8 US per figure, and now I finally have large beholders that stand up straight. The packaging is well-done, enough that I think I'll break with tradition and keep it around for storage.</p>
+
+<p><strong>7 October 2010: Site Ownership Change</strong> Hello! I'm the new owner of ddmdb.com, Ben Kimball. I had been helping out Brian with Rails questions and site updates for about a year when he asked me if I had any interest in taking over. I did, and on October 6th we pulled the switch. For now, my focus is just to keep the site going and current with new releases. Once I'm satisfied things are stable and error-free, I'll start thinking about new features and possibly a new UI. In the meantime, feel free to <script type="text/javascript">document.write(
+"<n uers=\"znvygb:qenpbfnhe\100oraxvzonyy\056pbz\">rznvy zr<\057n>".replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+</script> with any questions or problems. I'm also registered (as "Zubin") on the forums.</p>
+
+<p>Over the next month or so I will be phasing out the ddmdb.com domain name, to which Brian retains ownership, in favor of <strong>dracosaur.us</strong>. This is just a URL change to relieve some of Brian's maintenance headaches.</p>
+  
+<p>There are <%= Miniature.count %> figures in the database. Our <%= User.count %> <%= link_to 'users', :controller => "users" %> own a total of <%= Ownership.sum("have_count") %> miniatures. The figures have been tagged a total of <%= Tagging.count %> times with <%= Tag.count %> <%= link_to "unique tags", :controller => 'tags' %>.</p>
+
+<ul>
+<% for miniature in @edits %>
+	<li><%= link_to miniature.name, miniature %></li>
+<% end %>
+</ul>

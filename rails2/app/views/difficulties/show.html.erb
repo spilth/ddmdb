@@ -1,0 +1,5 @@
+<% content_for :title do %>4th Edition Difficulties: <%=h @difficulty.name %><% end %>
+
+<%= list_miniatures(@list_mode) %>
+
+<%= link_to 'Edit', edit_difficulty_path(@difficulty) if is_admin? %>

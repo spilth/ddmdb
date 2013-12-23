@@ -1,0 +1,21 @@
+<% content_for :title do %>4th Edition Types<% end %>
+
+<table>
+  <tr>
+    <th>Name</th>
+	<th>Count</th>
+  </tr>
+
+<% for kind in @kinds %>
+  <tr>
+    <td><span class="abbreviation"><%= link_to h(kind.name), kind %></span></td>
+    <td><span class="abbreviation"><%= kind.miniatures.size %></span></td>
+    <td><%= link_to 'Edit', edit_kind_path(kind) if is_admin? %></td>
+    <td><%= link_to 'Destroy', kind, :confirm => 'Are you sure?', :method => :delete  if is_admin? %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New kind', new_kind_path if is_admin? %>

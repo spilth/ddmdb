@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  number: 1
+  release_id: 1
+  type_id: 1
+  subtype_id: 1
+  source_id: 1
+  source_page_number: 1
+  setting_id: 1
+  challenge_rating: 9.99
+
+two:
+  name: MyString
+  number: 1
+  release_id: 1
+  type_id: 1
+  subtype_id: 1
+  source_id: 1
+  source_page_number: 1
+  setting_id: 1
+  challenge_rating: 9.99

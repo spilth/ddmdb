@@ -1,0 +1,21 @@
+<% content_for :title do %>4th Edition Origins<% end %>
+
+<table>
+  <tr>
+    <th>Name</th>
+	<th>Count</th>
+  </tr>
+
+<% for origin in @origins %>
+  <tr>
+    <td><span class="abbreviation"><%= link_to h(origin.name), origin %></span></td>
+	<td><span class="abbreviation"><%= origin.miniatures.size %></span></td>
+    <td><%= link_to 'Edit', edit_origin_path(origin) if is_admin? %></td>
+    <td><%= link_to 'Destroy', origin, :confirm => 'Are you sure?', :method => :delete if is_admin? %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New origin', new_origin_path if is_admin? %>

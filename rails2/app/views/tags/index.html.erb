@@ -1,0 +1,26 @@
+<% content_for :title do %>Tags<% end %>
+
+<h2>Search by Tags</h2>
+
+<% form_tag '/tags/show', :method => :get do %>
+	<%= text_field_tag :id %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+<p>Separate multiple tags with commas. Ex. <em>axe,shield</em></p>
+
+<h2>All Tags</h2>
+
+<% tag_cloud @tags, %w(tag1 tag2 tag3 tag4) do |tag, css_class| %>
+    <%= link_to tag.name, {:action => 'show', :id => tag.name}, :class => css_class %> 
+<% end %>
+
+<p><%= link_to "How should I tag miniatures?", "http://ddmdb.21.forumer.com/viewtopic.php?t=2" %></p>
+
+<h2>Recent Taggings</h2>
+
+<% for tagging in @taggings %>
+	<%= link_to tagging.taggable.name, tagging.taggable %> tagged with <%= link_to tagging.tag.name, {:action => 'show', :id => tagging.tag.name} %><br/>
+<% end %>
+
+<p><%= link_to "How should I tag miniatures?", "http://ddmdb.21.forumer.com/viewtopic.php?t=2" %></p>

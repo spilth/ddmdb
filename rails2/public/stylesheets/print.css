@@ -1,0 +1,11 @@
+body {
+	background: #fff;
+}
+
+#nav {
+	display: none;
+}
+
+#main {
+  border: 0;
+}

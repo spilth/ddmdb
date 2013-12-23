@@ -1,0 +1,22 @@
+<% content_for :title do %>Users: <%= h(@user.login) %><% end %>
+
+<p><%= h(@user.login) %> joined ddmdb.com on <%= h(@user.created_at.strftime("%B %d, %Y")) %></p>
+
+<ul>
+	<li><%= link_to "View #{@user.login}'s Miniature Collection", collection_path(@user) %> - <%= @miniature_count %> miniatures</li>
+	<li><%= link_to "View #{@user.login}'s Favorites", favorites_path(@user) %> - <%= @favorites_count %> favorites</li>
+</ul>
+	
+<h2>Recent Comments</h2>
+
+<div id="comments">
+	<%= render :partial => "shared/comments" %>
+</div>
+
+<!-- 
+<h2>Collection Summary</h2>
+
+<h2>Encounters</h2>
+
+<h2>Favorite Miniatures</h2>
+-->

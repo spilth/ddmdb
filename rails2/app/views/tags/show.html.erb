@@ -1,0 +1,10 @@
+<% content_for :title do %>Search By Tags: <%= h(@tag) %><% end %>
+
+<% form_tag '/tags/show', :method => :get do %>
+	<%= text_field_tag :id, @tag %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+<p>Separate multiple tags with commas. Ex. <em>axe,shield</em></p>
+
+<%= list_miniatures(@list_mode) %>

@@ -1,0 +1,260 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #aaa url('/images/bg.gif') fixed;
+	font: small verdana, arial, helvetica, sans-serif;
+}
+
+h1 {
+	border-bottom: 2px solid #ccc;
+	margin: 0;
+	font-size: 1.6em;
+}
+
+h2 {
+	border-bottom: 1px solid #ccc;
+	font-size: 1.2em;
+	margin: 0;
+}
+
+th {
+	background: #ccc;
+	padding: 4px;
+	border-bottom: 1px solid #999;
+}
+
+td {
+	font-size: 1.0em;
+	padding: 4px;
+}
+
+img {
+	border: 0;
+}
+
+dt {
+	font-weight: bold;
+}
+
+/* Layout */ 
+
+#sidebar {
+	float: left;
+	width: 180px;
+	border: 1px solid #999;
+	background: #fff;
+	margin: 8px;
+	margin-right: 0;
+	padding: 8px;
+}
+
+#main {
+	border: 1px solid #999;
+	background: #fff;
+	margin: 8px;
+	padding: 8px;
+	text-align: left;
+}
+
+.section {
+	margin-bottom: 1em;
+}
+
+/* Navigation */
+
+#nav {
+	margin: 0;
+	padding: 2px;
+	padding-left: 1em;
+	background: #eee;
+}
+
+.navigation {
+	list-style: none;
+	margin: 2px;
+	padding: 0;
+}
+
+.navigation li {
+	margin:0 0.4em;
+	padding: 0;
+	display: inline;
+}
+
+/* Style */
+
+td.thumbnail {
+	height: 64px;
+	width: 64px;
+	text-align: center;
+	vertical-align:middle;
+	background: #fff;
+}
+
+.odd {
+	
+}
+
+.even {
+	background: #eee;
+}
+
+.abbreviation {
+		font-size: 1.4em;
+}
+
+/* Comments */
+
+#comments h4 {
+	margin: 0;
+	padding: 0;
+}
+
+#comments p {
+	margin: 0 0 1em 0;
+}
+
+.comment {
+	border: 1px solid #ccc;
+	background: #eee;
+	padding: 4px;
+	margin-bottom: 1em;
+
+}
+
+.comment h4 {
+	margin: 0;
+	padding: 0;
+}
+
+/* Tags */
+
+.tag1 { font-size: 1.0em; }
+.tag2 { font-size: 1.3em; }
+.tag3 { font-size: 1.7em; }
+.tag4 { font-size: 2.0em; }
+
+#notes {
+    clear: both;
+}
+
+#tags {
+	clear: both;
+}
+
+#figure {
+	float: right;
+}
+
+.figure {
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 4px;
+	max-width: 256px;
+	max-height: 256px;
+	width: expression(this.width > 256 ? 256: true);
+	height: expression(this.height > 256 ? 256: true);
+}
+
+.figure a {
+	border: 0;
+}
+
+.symbol {
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 4px;
+	margin-bottom: 2px;
+}
+
+/* Main Table */
+
+#miniatures {
+	width: 100%;
+	clear: both;
+}
+
+/* Stats */
+
+#stats {
+	float: left;
+}
+
+#stats3 {
+	clear: both;
+}
+
+#stats4 {
+	clear: both;
+}
+
+#cards {
+	vertical-align: top;
+}
+
+/* Stat "Cards" */
+
+.stats4, .stats3, .source {
+	width: 500px;
+	background: #020;
+	color: #fff;
+	margin: 0;
+	padding: 4px 8px;
+	font-family: verdana, sans-serif;
+	font-size: 1.0em;
+	float: left;
+}
+
+.stats3 {
+	background: #a30;
+}
+
+.stats a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.stats a:hover {
+	text-decoration: underline;
+}
+
+.stats .name-level {
+	width: 100%;
+	font-weight: bold;
+	float: left;
+}
+
+.stats .name {
+	width: 50%;
+	float: left;
+}
+
+.stats .level {
+	width: 50%;
+	float: right;
+	text-align: right;
+}
+
+.stats .size-xp {
+	width: 100%;
+	font-size: 0.8em;
+	clear: both;
+	float: left;
+}
+
+.stats .size {
+	width: 50%;
+	float: left;
+}
+
+.stats .xp {
+	width: 50%;
+	float: right;
+	text-align: right;
+}
+
+.source {
+	clear: both;
+	background: #ccc;
+	color: #000;
+}

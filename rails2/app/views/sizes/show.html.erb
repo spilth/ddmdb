@@ -1,0 +1,5 @@
+<% content_for :title do %>Sizes: <%=h @size.name %> (<%=h @size.abbreviation %>)<% end %>
+
+<%= link_to 'Edit', edit_size_path(@size) if is_admin? %>
+
+<%= list_miniatures(@list_mode) %>

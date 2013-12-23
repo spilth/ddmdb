@@ -1,0 +1,36 @@
+<% content_for :title do %><%= @user.login %>'s Miniature Collection: Missing Figures<% end %>
+
+<% form_tag '/collections/update' do %>
+
+<table cellspacing="0">
+	<tr>
+		<th>Release</th>
+		<th>#</th>
+		<th>Name</th>
+		<th>Count</th>
+	</tr>
+
+<% for miniature in @miniatures %>
+	<% if @user.miniature_count(miniature.id) == 0 %>
+		<tr class="<%= cycle('odd','even') %>">
+			<td><%= h(miniature.release.name) %></td>
+			<td><%= h(miniature.number) %></td>
+			<td><%= link_to h(miniature.name), miniature %></td>
+			<td>
+				<% if @user == current_user %>
+					<%= text_field_tag "counts[#{miniature.id}]", @user.miniature_count(miniature.id), :size => 2 %>
+				<% else %>
+					<%= @user.miniature_count(miniature.id) %>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+<% end %>
+
+</table>
+
+<% if logged_in? && current_user == @user %>
+	<%= submit_tag "Update Collection" %>
+<% end %>
+
+<% end %>
