@@ -26,6 +26,7 @@ group :development, :test do
   gem 'rails_best_practices'
   gem 'brakeman'
   gem 'dotenv-rails'
+  gem 'pry'
 end
 
 group :test do

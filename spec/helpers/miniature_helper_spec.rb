@@ -1,6 +1,25 @@
 require 'spec_helper'
 
 describe MiniatureHelper do
+  describe '#miniature_count_for_user' do
+    context 'when the user owns the miniatures' do
+      it 'returns the count' do
+        user = create(:user)
+        miniature = create(:miniature)
+        user_miniature = create(:user_miniature, user: user, miniature: miniature, count: 42)
+        expect(miniature_count_for_user(miniature, user)).to eq 42
+      end
+    end
+
+    context 'when the user does not own the miniature' do
+      it 'returns 0' do
+        user = create(:user)
+        miniature = create(:miniature)
+        expect(miniature_count_for_user(miniature, user)).to eq 0
+      end
+    end
+  end
+
   describe '#miniature_thumbnail' do
     context 'single digit number and release_id' do
       it 'generates a thumbnail url' do

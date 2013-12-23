@@ -12,6 +12,8 @@ Ddmdb::Application.routes.draw do
   resources :sizes, only: [:index, :new, :create, :show]
   resources :rarities, only: [:index, :new, :create, :show]
 
+  put 'user_miniatures' => 'user_miniatures#update', as: :update_multiple_user_miniatures
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
