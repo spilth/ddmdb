@@ -17,6 +17,19 @@
 
     <dt>Subtype</dt>
     <dd><%= @miniature.subtype_name %></dd>
+
+    <dt>Tags</dt>
+    <% @miniature.tags.each do |tag| %>
+      <dd><%= link_to tag.name, tag_path(tag) %></dd>
+    <% end %>
   </dl>
+
+  <% if current_user %>
+    <%= form_for @miniature do |f| %>
+      <%= f.label :tag_list, "Tags" %>
+      <%= f.text_field :tag_list %>
+      <%= f.submit "Add Tags" %>
+    <% end %>
+  <% end %>
 </div>
 

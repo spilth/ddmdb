@@ -10,6 +10,27 @@ describe MiniaturesController do
     end
   end
 
+  context 'as a user' do
+    before do
+      sign_in :user, create(:user)
+    end
+
+    describe '#update' do
+      it 'redirects to the miniature you were viewing' do
+        miniature = create(:miniature)
+        post :update, id: miniature.id, miniature: {name: 'New Name'}
+        expect(response).to redirect_to miniature_path(miniature)
+      end
+
+      it 'sets the flash message' do
+        miniature = create(:miniature)
+        post :update, id: miniature.id, miniature: {name: 'New Name'}
+
+        expect(flash[:notice]).to eq 'This miniature has been update.'
+      end
+    end
+  end
+
   context 'as an admin' do
     before do
       sign_in :user, create(:admin_user)
