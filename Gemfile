@@ -4,6 +4,7 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.2'
 
+gem 'acts-as-taggable-on'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'draper'

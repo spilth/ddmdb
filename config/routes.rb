@@ -6,11 +6,12 @@ Ddmdb::Application.routes.draw do
   root 'home#index'
 
   resources :releases, only: [:index,:new, :create, :show]
-  resources :miniatures, only: [:index, :new, :create, :show]
+  resources :miniatures, only: [:index, :new, :create, :show, :update]
   resources :types, only: [:index, :new, :create, :show]
   resources :subtypes, only: [:index, :new, :create, :show]
   resources :sizes, only: [:index, :new, :create, :show]
   resources :rarities, only: [:index, :new, :create, :show]
+  resources :tags, only: [:index, :show]
 
   put 'user_miniatures' => 'user_miniatures#update', as: :update_multiple_user_miniatures
 

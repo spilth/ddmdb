@@ -11,4 +11,6 @@ class Miniature < ActiveRecord::Base
   validates :name, presence: true
   validates :number, presence: true, numericality: true
 
+  acts_as_taggable
 end
+

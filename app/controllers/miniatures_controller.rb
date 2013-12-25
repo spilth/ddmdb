@@ -1,5 +1,5 @@
 class MiniaturesController < ApplicationController
-  before_filter :authenticate_user!, only: [:new, :create]
+  before_filter :authenticate_user!, only: [:new, :create, :update]
   before_filter :admin_only, only: [:new, :create]
 
   def index
@@ -19,9 +19,18 @@ class MiniaturesController < ApplicationController
     @miniature = Miniature.find(params[:id]).decorate
   end
 
+  def update
+    @miniature = Miniature.find(params[:id])
+    success = @miniature.update_attributes(miniature_params)
+    if success
+      flash[:notice] = 'This miniature has been update.'
+      redirect_to miniature_path(@miniature)
+    end
+  end
+
   private
 
   def miniature_params
-    params.require(:miniature).permit(:name, :type_id, :subtype_id, :release_id, :number)
+    params.require(:miniature).permit(:name, :type_id, :subtype_id, :release_id, :number, :tag_list)
   end
 end
