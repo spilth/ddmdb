@@ -1,0 +1,5 @@
+<% content_for :title do %>D&amp;D Miniatures - All Miniatures<% end %>
+
+<%= render(:partial => "shared/miniatures") %>
+
+<%= link_to 'New miniature', new_miniature_path if is_admin? %>

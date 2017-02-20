@@ -1,0 +1,21 @@
+<% content_for :title do %>4th Edition Keywords<% end %>
+
+<table>
+  <tr>
+    <th>Name</th>
+	<th>Count</th>
+  </tr>
+
+<% for keyword in @keywords %>
+  <tr>
+    <td><span class="abbreviation"><%= link_to h(keyword.name), keyword %></span></td>
+    <td><%=h keyword.miniatures.size %></td>
+    <td><%= link_to 'Edit', edit_keyword_path(keyword) if is_admin?  %></td>
+    <td><%= link_to 'Destroy', keyword, :confirm => 'Are you sure?', :method => :delete if is_admin?  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New keyword', new_keyword_path %>

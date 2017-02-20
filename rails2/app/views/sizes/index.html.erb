@@ -1,0 +1,23 @@
+<% content_for :title do %>Sizes<% end %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Abbreviation</th>
+	<th>Count</th>
+  </tr>
+
+<% for size in @sizes %>
+  <tr>
+    <td><span class="abbreviation"><%= link_to h(size.name), size %></span></td>
+    <td><span class="abbreviation"><%=h size.abbreviation %></span></td>
+	<td><span class="abbreviation"><%= size.miniatures.size %></span></td>
+    <td><%= link_to 'Edit', edit_size_path(size) if is_admin? %></td>
+    <td><%= link_to 'Destroy', size, :confirm => 'Are you sure?', :method => :delete if is_admin? %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New size', new_size_path if is_admin? %>

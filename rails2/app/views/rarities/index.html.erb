@@ -1,0 +1,23 @@
+<% content_for :title do %>D&amp;D Miniatures by Rarity<% end%>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Abbreviation</th>
+	<th>Count</th>
+  </tr>
+
+<% for rarity in @rarities %>
+  <tr>
+    <td><%= link_to h(rarity.name), rarity %></td>
+    <td><%=h rarity.abbreviation %></td>
+	<td><%= rarity.miniatures.size %></td>
+    <td><%= link_to 'Edit', edit_rarity_path(rarity) if is_admin? %></td>
+    <td><%= link_to 'Destroy', rarity, :confirm => 'Are you sure?', :method => :delete if is_admin? %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New rarity', new_rarity_path if is_admin? %>

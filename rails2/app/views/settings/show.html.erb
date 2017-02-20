@@ -1,0 +1,5 @@
+<% content_for :title do %>Campaign Settings: <%=h @setting.name %> (<%=h @setting.abbreviation %>)<% end %>
+
+<%= link_to 'Edit', edit_setting_path(@setting) if is_admin? %>
+
+<%= list_miniatures(@list_mode) %>

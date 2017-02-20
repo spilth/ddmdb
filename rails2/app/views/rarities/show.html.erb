@@ -1,0 +1,5 @@
+<% content_for :title do %>D&amp;D Miniatures by Rarity: <%=h @rarity.name %> (<%=h @rarity.abbreviation %>)<% end%>
+
+<%= link_to 'Edit', edit_rarity_path(@rarity) if is_admin? %> 
+
+<%= list_miniatures(@list_mode) %>

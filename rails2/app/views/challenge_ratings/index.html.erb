@@ -1,0 +1,16 @@
+<% content_for :title do %>Challenge Ratings<% end %>
+
+<table>
+	<tr>
+		<th>Challenge Rating</th>
+		<th>Count</th>
+	</tr>
+<% for challenge_rating in @challenge_ratings %>
+	<% if Miniature.challenge_rating(challenge_rating).size > 0 %>
+	<tr>
+		<td><span class="abbreviation"><%= link_to "CR #{format_cr(challenge_rating)}", :action => 'show', :id => challenge_rating %></span></td>
+		<td><span class="abbreviation"><%= Miniature.challenge_rating(challenge_rating).size %></span></td>
+	</tr>
+	<% end %>
+<% end %>
+</table>

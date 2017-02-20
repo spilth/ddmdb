@@ -1,0 +1,5 @@
+<% content_for :title do %>3rd Edition Subtypes: <%=h @subtype.name %><% end %>
+
+<%= link_to 'Edit', edit_subtype_path(@subtype) if is_admin? %>
+
+<%= list_miniatures(@list_mode) %>

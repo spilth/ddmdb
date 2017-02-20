@@ -1,0 +1,11 @@
+<p><%= @miniatures.size %> Miniatures</p>
+
+<div style="float: left;">
+
+<% for miniature in @miniatures %>
+		<div style="float: left; vertical-align: bottom;">
+			<%= link_to large_image(miniature), miniature %><br />
+			<%= link_to miniature.name, miniature %>
+		</div>
+<% end%>
+</div>

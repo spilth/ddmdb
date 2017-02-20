@@ -1,0 +1,16 @@
+<h1>Editing origin</h1>
+
+<% form_for(@origin) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @origin %> |
+<%= link_to 'Back', origins_path %>

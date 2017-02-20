@@ -1,0 +1,14 @@
+<% content_for :title do %>Search by Name: <%= h(@name) %><% end %>
+
+<% form_tag '/search/by_name', :method => :get do %>
+	<%= text_field_tag :name, @name %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+<% if !@miniatures.nil? %>
+	<% if @miniatures.size < 1 %>
+		<p>Sorry no miniatures were found.</p>
+	<% else %>
+      <%= list_miniatures(@list_mode) %>
+	<% end %>
+<% end %>

@@ -1,0 +1,145 @@
+<% content_for :title do %>Miniature: <%= h(@miniature.release.name) %> #<%= h(@miniature.number)%> - <%= h(@miniature.name) %><% end %>
+
+<div id="figure">
+	<%= large_image(@miniature) %><br/>
+	<%= link_to image_tag(edit_icon), edit_miniature_path(@miniature) if is_admin? %>
+	<%= favorite_icon(current_user, @miniature) if logged_in? %>
+	<br/>
+	<%= @miniature.owners.sum("have_count") %> owned<br/>
+	<%= @miniature.fans.size %> fans
+</div>
+
+<div id="stats" class="section">
+	<div id="stats3" class="section">
+	<h2>3rd Edition</h2>
+
+	<div class="stats stats3">
+		<div class="name-level">
+			<div class="name"><%= @miniature.name %></div>
+			<div class="level"></div>
+		</div>
+		<div class="size-xp">
+			<div class="size"><% if @miniature.type %><%= link_to @miniature.size.name, @miniature.size %> <%= link_to @miniature.type.name, @miniature.type %> <%= link_to "(#{@miniature.subtype.name})", @miniature.subtype if @miniature.subtype %><% end %></div>
+			<div class="xp"><% if @miniature.challenge_rating %>
+				CR <%= format_cr(@miniature.challenge_rating) %><br/>
+			<% end %></div>
+		</div>
+	</div>
+	<% if @miniature.source %>
+	<div class="source">
+		<%= link_to @miniature.source.name, @miniature.source %><%=h ", page #{@miniature.source_page_number}" if @miniature.source_page_number %>
+	</div>
+	<% end %>
+
+	</div>
+
+	<div id="stats4" class="section">
+	<h2>4th Edition</h2>
+	
+	<div class="stats stats4">
+		<div class="name-level">
+			<div class="name"><%= @miniature.name %></div>
+			<div class="level">
+				<% if @miniature.level %>Level <%= @miniature.level %><% end %>
+				<% if @miniature.role %>
+					<%= link_to h(@miniature.difficulty.name), @miniature.difficulty if @miniature.difficulty %> 
+					<%= link_to h(@miniature.role.name), @miniature.role %> 
+					<% if @miniature.leader %>(Leader)<% end %>
+				<% end %>
+			</div>
+		</div>
+		<div class="size-xp">
+			<div class="size">
+				<%= link_to h(@miniature.size.name), @miniature.size if @miniature.size %> 
+				<%= link_to h(@miniature.origin.name.downcase), @miniature.origin if @miniature.origin %> 
+				<%= link_to h(@miniature.kind.name.downcase), @miniature.kind if @miniature.kind %> 
+				<% if @miniature.keywords.size > 0 %>(<%= format_keywords(@miniature.keywords)%>)<% end %>
+			</div>
+			<div class="xp"><%= calculate_xp(@miniature) %></div>
+		</div>
+	</div>
+	<% if @miniature.source2 %>
+		<div class="source">
+			<%= link_to @miniature.source2.name, @miniature.source2 %><%=h ", page #{@miniature.source2_page_number}" if @miniature.source2_page_number %>
+		</div>
+	<% end %>
+	</div>
+
+	<% if @miniature.setting %>
+	<div id="general">
+			<%= link_to @miniature.setting.name, @miniature.setting %><br/>
+	</div>
+	<% end %>
+
+  <% if !@miniature.notes.blank? %>
+    <div id="notes">
+      <h2>Notes</h2>
+      <p><%=h @miniature.notes %></p>
+    </div>
+  <% end %>
+</div>
+
+<% if logged_in? && false %>
+	<div id="collection">
+		<h2>Collection</h2>
+		<% form_tag :action => 'update_count', :id => @miniature do %>
+			<p>You own <%= @have_count %> of this miniature. <%= text_field_tag :have_count, @have_count, :size => 2 %> <%= submit_tag "Update" %></p>
+		<% end %>
+	</div>
+<% end %>
+
+<div id="tags">
+
+	<h2>Tags</h2>
+
+	<% if !@tags.blank? %>
+		<ul>
+		<% for tag in @tags %>
+			<li><%= link_to tag, :controller => "tags", :action => "show", :id => tag.name %> <%= link_to "x", {:action => "delete_tags", :id => @miniature, :tags => tag.name}, :confirm => "Are you sure?" if logged_in? %></li>
+		<% end %>
+		</ul>
+	<% else %>
+		<p>This miniature does not have any tags yet.</p>
+	<% end %>
+
+	<% if logged_in? %>
+	<p>
+	<% form_tag :action => 'add_tags', :id => @miniature do %>
+		<%= link_to "How should I tag miniatures?", "http://ddmdb.21.forumer.com/viewtopic.php?t=2" %><br/>
+		<%= text_field_tag :tags %> <%= submit_tag "Add Tag(s)" %><br/>
+		<em>Separate multiple tags with commas!</em><br />
+	<% end %>
+
+	<% end %>
+</div>
+
+<div id="cards">
+	<h2>Card Images</h2>
+	<p>
+	<%= rpg_card(@miniature) %>
+	<%= skirmish_card(@miniature) %>
+	</p>
+</div>
+
+<div id="comments">
+	<h2>Comments</h2>
+
+	<%= render :partial => "shared/comments" %>
+
+	<% if logged_in? %>
+
+		<h3>Add Comment</h3>
+
+		<% form_tag :action => 'add_comment', :id => @miniature do %>
+			<dl>
+				<dt>Title</dt>
+				<dd><%= text_field_tag :title, nil, :size => 40 %></dd>
+				<dt>Comment</dt>
+				<dd><%= text_area_tag :comment, nil, :cols => 40, :rows => 8 %></dd>
+				<dd><%= submit_tag "Add Comment" %></dd>
+			</dl>
+		<% end %>
+
+	<% end %>
+</div>
+

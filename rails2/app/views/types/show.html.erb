@@ -1,0 +1,9 @@
+<% content_for :title do %>3rd Edition Types: <%=h @type.name %><% end %>
+
+<% if !@type.description.blank? %>
+	<p><%= h(@type.description) %></p>
+<% end %>
+
+<%= link_to 'Edit', edit_type_path(@type) if is_admin? %>
+
+<%= list_miniatures(@list_mode) %>

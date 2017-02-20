@@ -1,0 +1,9 @@
+<% content_for :title do %>User Comments<% end %>
+
+<p>Showing all miniature comments with the newest comments first.</p>
+
+<%= will_paginate @comments %>
+<div id="comments">
+	<%= render :partial => "shared/comments" %>
+</div>
+<%= will_paginate @comments %>

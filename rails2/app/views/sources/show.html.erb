@@ -1,0 +1,5 @@
+<% content_for :title do %><%= format_edition(@source.edition) %> Edition Sourcebooks: <%=h @source.name %> (<%=h @source.abbreviation %>)<% end %>
+
+<%= link_to 'Edit', edit_source_path(@source) if is_admin? %>
+
+<%= list_miniatures(@list_mode) %>

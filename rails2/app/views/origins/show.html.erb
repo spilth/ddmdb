@@ -1,0 +1,5 @@
+<% content_for :title do %>4th Edition Origins: <%=h @origin.name %><% end %>
+
+<%= list_miniatures(@list_mode) %>
+
+<%= link_to 'Edit', edit_origin_path(@origin) if is_admin? %>

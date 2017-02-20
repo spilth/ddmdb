@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta name="keywords" content="dungeons, dragons, miniatures, database, ddm, 3rd edition, 4th edition, stats, rpg, d&amp;d" />
+  <meta name="description" content="A database of 3rd and 4th Edition stats for the Dungeons and Dragons Miniatures line of figures." />
+  <title>D&amp;D Miniatures Database: <%= yield :title %></title>
+  <%= javascript_include_tag 'prototype' %>
+  <%= stylesheet_link_tag 'scaffold', 'ddmdb' %>
+  <%= stylesheet_link_tag 'print', :media => "print" %>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-40004691-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</head>
+<body>
+
+<% if RAILS_ENV == "development" %>
+<div id="development" style="background:#f60; color: #a00; text-align: center;"><h1>DEVELOPMENT ENVIRONMENT</h1></div>
+<% end %>
+
+<div id="nav">
+<ul class="navigation">
+<li><%= link_to "Home", root_path %></li>
+<li><a href="http://ddmdb.21.forumer.com/viewforum.php?f=2">News</a></li>
+<li><%= link_to "Users", users_path %></li>
+<li><%= link_to "Comments", comments_path %></li>
+<li><a href="http://ddmdb.21.forumer.com/">Forum</a></li>
+<% if !logged_in? %>
+<li><%= link_to "Sign Up", signup_path %></li>
+<li><%= link_to "Log In", login_path %></li>
+<% else %>
+<li><%= link_to "Collection", "/collection" %></li>
+<li><%= link_to "Favorites", "/favorites" %></li>
+<li><%= link_to "Log Out", logout_path %></li>
+<% end %>
+<li><strong>General</strong></li>
+<li><%= link_to "Releases", releases_path %></li>
+<li><%= link_to "Sizes", sizes_path %></li>
+<li><%= link_to "Settings", settings_path %></li>
+<li><%= link_to "Sources", sources_path %></li>
+<li><%= link_to "Tags", :controller => "tags" %></li>
+<li><%= link_to "Search", :controller => "search" %></li>
+</ul>
+<ul class="navigation">
+<li><strong>3rd Edition</strong></li>
+<li><%= link_to "Types", types_path %></li>
+<li><%= link_to "Subtypes", subtypes_path %></li>
+<li><%= link_to "Challenge Rating", :controller => "challenge_ratings" %>
+<li><strong>4th Edition</strong></li>
+<li><%= link_to "Levels", :controller => "levels" %></li>
+<li><%= link_to "Difficulty", difficulties_path %></li>
+<li><%= link_to "Role", roles_path %></li>
+<li><%= link_to "Leaders", leaders_path %></li>
+<li><%= link_to "Origin", origins_path %></li>
+<li><%= link_to "Type", kinds_path %></li>
+<li><%= link_to "Keywords", keywords_path %></li>
+</ul>
+</div>
+
+<div id="main">
+
+<h1>D&amp;D Miniatures Database: <%= yield :title %></h1>
+
+<p style="color: green"><%= flash[:notice] %></p>
+<p style="color: red"><%= flash[:error] %></p>
+
+<%= yield  %>
+
+</div>
+
+</body>
+</html>

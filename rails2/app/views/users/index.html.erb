@@ -1,0 +1,18 @@
+<% content_for :title do %>Users<% end %>
+
+<%= will_paginate @users %>
+
+<table>
+	<tr>
+		<th>Username</th>
+		<th>Joined</th>
+	</tr>
+<% for user in @users %>
+	<tr>
+		<td><%= link_to h(user.login), user %></td>
+		<td><%= h(user.created_at.strftime("%B %d, %Y")) %></td>
+	</tr>
+<% end %>
+</table>
+
+<%= will_paginate @user %>

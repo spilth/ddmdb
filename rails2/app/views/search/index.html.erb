@@ -1,0 +1,17 @@
+<% content_for :title do %>Search<% end %>
+
+<h2>Search by Name</h2>
+
+<% form_tag '/search/by_name', :method => :get do %>
+	<%= text_field_tag :name, @name %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+<h2>Search by Tags</h2>
+
+<% form_tag '/tags/show', :method => :get do %>
+	<%= text_field_tag :id %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+<p>Separate multiple tags with commas. Ex. <em>axe,shield</em></p>

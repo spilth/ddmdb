@@ -1,0 +1,28 @@
+<h1>Editing release</h1>
+
+<% form_for(@release) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :abbreviation %><br />
+    <%= f.text_field :abbreviation %>
+  </p>
+  <p>
+    <%= f.label :path %><br />
+    <%= f.text_field :path %>
+  </p>
+  <p>
+    <%= f.label :released_on %><br />
+    <%= f.date_select :released_on %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @release %> |
+<%= link_to 'Back', releases_path %>
